@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Hub | Advanced Learning Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #020617; color: #f8fafc; scroll-behavior: smooth; }
+        .quantum-gradient { background: linear-gradient(135deg, #1e40af 0%, #7e22ce 100%); }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .nav-link:hover { color: #60a5fa; transition: 0.3s; }
+    </style>
+</head>
+<body>
+
+    <nav class="sticky top-0 z-50 glass px-6 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-black tracking-widest text-blue-500">QUANTUM<span class="text-white font-light">HUB</span></h1>
+        <div class="hidden md:flex space-x-8 text-sm font-medium">
+            <a href="#roadmap" class="nav-link">Roadmap</a>
+            <a href="#library" class="nav-link">Library</a>
+            <a href="#admin" class="nav-link">Admin</a>
+            <a href="#ai" class="nav-link text-purple-400">Ask AI</a>
+        </div>
+        <button class="quantum-gradient px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider">Research Mode</button>
+    </nav>
+
+    <section class="py-24 px-6 text-center">
+        <div class="inline-block px-4 py-1 rounded-full border border-blue-500/30 text-blue-400 text-xs mb-6">World's #1 Quantum Resource Hub</div>
+        <h2 class="text-6xl font-extrabold mb-6 leading-tight">Explore the Quantum Realm <br> <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">One Qubit at a Time</span></h2>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg">বেসিক থেকে সুপার অ্যাডভান্সড পর্যন্ত কোয়ান্টাম মেকানিক্সের সব জার্নাল, আর্টিকেল এবং ভিডিও এখন আপনার হাতের মুঠোয়।</p>
+    </section>
+
+    <section id="roadmap" class="max-w-7xl mx-auto p-6 mb-20">
+        <h3 class="text-3xl font-bold mb-10 text-center">Learning Roadmap</h3>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="glass p-6 rounded-2xl hover:border-blue-500 transition">
+                <div class="text-blue-500 font-mono text-xs mb-2">01. FOUNDATION</div>
+                <h4 class="text-xl font-bold">Linear Algebra</h4>
+            </div>
+            <div class="glass p-6 rounded-2xl hover:border-blue-500 transition">
+                <div class="text-blue-500 font-mono text-xs mb-2">02. MECHANICS</div>
+                <h4 class="text-xl font-bold">Superposition</h4>
+            </div>
+            <div class="glass p-6 rounded-2xl hover:border-blue-500 transition">
+                <div class="text-blue-500 font-mono text-xs mb-2">03. ARCHITECTURE</div>
+                <h4 class="text-xl font-bold">Quantum Gates</h4>
+            </div>
+            <div class="glass p-6 rounded-2xl hover:border-blue-500 transition">
+                <div class="text-blue-500 font-mono text-xs mb-2">04. ADVANCED</div>
+                <h4 class="text-xl font-bold">Shor's Algorithm</h4>
+            </div>
+        </div>
+    </section>
+
+    <section id="ai" class="max-w-4xl mx-auto p-10 glass rounded-3xl border-2 border-purple-500/20 mb-20">
+        <h3 class="text-2xl font-bold mb-4 text-purple-400">🤖 AI Navigator</h3>
+        <div id="aiDisplay" class="bg-black/50 p-4 rounded-xl h-40 mb-6 overflow-y-auto font-mono text-green-400 text-sm">
+            Hello Researcher! How can I help you today?
+        </div>
+        <div class="flex gap-2">
+            <input type="text" id="aiInput" placeholder="Ask about Entanglement, Bell's Theorem..." class="flex-grow p-4 bg-gray-900 rounded-xl outline-none border border-gray-700 focus:border-purple-500">
+            <button onclick="runAI()" class="quantum-gradient px-8 rounded-xl font-bold">Ask</button>
+        </div>
+    </section>
+
+    <section id="admin" class="max-w-7xl mx-auto p-6 bg-blue-900/10 rounded-3xl mb-20">
+        <h3 class="text-2xl font-bold mb-8 text-center">Update New Resources</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <input type="text" id="resTitle" placeholder="Title" class="p-3 bg-gray-900 rounded-lg outline-none border border-gray-700">
+            <input type="url" id="resUrl" placeholder="Link" class="p-3 bg-gray-900 rounded-lg outline-none border border-gray-700">
+            <button onclick="addResource()" class="bg-white text-black font-bold py-3 rounded-lg hover:bg-blue-400 transition">Add To List</button>
+        </div>
+    </section>
+
+    <footer class="text-center py-10 text-gray-600 text-sm border-t border-gray-900">
+        &copy; 2026 Quantum Hub | Built for Future Researchers
+    </footer>
+
+    <script>
+        function runAI() {
+            const val = document.getElementById('aiInput').value;
+            const disp = document.getElementById('aiDisplay');
+            disp.innerHTML += `<br><span class="text-white">You: ${val}</span><br>AI: Analyzing quantum states...`;
+        }
+
+        function addResource() {
+            const title = document.getElementById('resTitle').value;
+            alert(title + " added successfully to your library!");
+        }
+    </script>
+</body>
+</html>
